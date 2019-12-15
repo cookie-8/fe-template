@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { withRouter, RouteComponentProps } from 'react-router-dom'
 import cx from 'classnames'
 // import { testService } from '@src/api'

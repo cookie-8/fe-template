@@ -15,6 +15,3 @@ function AppRouter(): JSX.Element {
 }
 
 ReactDOM.render(<AppRouter />, document.getElementById('root-app'))
-const a = {
-  s: 1,
-}
