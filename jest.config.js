@@ -24,7 +24,7 @@ module.exports = {
   // collectCoverageFrom: null,
 
   // The directory where Jest should output its coverage files
-  coverageDirectory: "coverage",
+  coverageDirectory: 'coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
@@ -70,20 +70,19 @@ module.exports = {
 
   // An array of file extensions your modules use
   moduleFileExtensions: [
-    "js",
+    'js',
     // "json",
-    "jsx",
-    "ts",
-    "tsx",
+    'jsx',
+    'ts',
+    'tsx',
     // "node"
   ],
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
   // moduleNameMapper: {},
-  moduleNameMapper:{
-    "\.(css|scss)$": "<rootDir>/__test__/styleMock.js"
+  moduleNameMapper: {
+    '^@src(.*)$': '<rootDir>/src$1',
   },
- 
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
@@ -116,7 +115,7 @@ module.exports = {
   // restoreMocks: false,
 
   // The root directory that Jest should scan for tests and modules within
-  // rootDir: null,
+  rootDir: './',
 
   // A list of paths to directories that Jest should use to search for files in
   // roots: [
@@ -128,7 +127,7 @@ module.exports = {
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
   // setupFiles: [],
-
+  setupFiles: ['./__test__/config/setupTests.js'],
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
   // setupFilesAfterEnv: [],
 
@@ -136,7 +135,7 @@ module.exports = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: "node",
+  testEnvironment: 'node',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -149,9 +148,7 @@ module.exports = {
   //   "**/__tests__/**/*.[jt]s?(x)",
   //   "**/?(*.)+(spec|test).[tj]s?(x)"
   // ],
-  testMatch: [
-    "<rootDir>/__test__/**/*.(spec|test).[jt]s?(x)"
-  ],
+  testMatch: ['<rootDir>/__test__/**/*.(spec|test).[jt]s?(x)'],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
@@ -175,10 +172,12 @@ module.exports = {
 
   // A map from regular expressions to paths to transformers
   // transform: null,
-    transform: {
-      "^.+\.tsx?$": "babel-jest",
-      // '^.+\.s?css$': '<rootDir>/__test__/css-transform.js',
-    }
+  transform: {
+    '^.+\\.[t|j]sx?$': 'babel-jest',
+    '^.+\\.(css|scss|less)$': '<rootDir>/__test__/config/styleMock.js',
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/__test__/config/fileTransform.js',
+  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
@@ -196,4 +195,4 @@ module.exports = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-};
+}
