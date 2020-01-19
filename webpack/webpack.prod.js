@@ -9,8 +9,6 @@ const fs = require('fs')
 const file = fs.readFileSync(pathConfig.appPackageJson).toString(),
     projectName = JSON.parse(file).name
 
-const distDir = 'dist';
-
 module.exports = merge(base, {
     mode: 'production',
     devtool: false,

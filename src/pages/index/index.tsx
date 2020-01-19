@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { Component } from 'react'
 import { withRouter, RouteComponentProps } from 'react-router-dom'
 import cx from 'classnames'
 // import { testService } from '@src/api'
@@ -8,7 +8,7 @@ import './index.scss'
 type P = RouteComponentProps & {}
 type S = {}
 
-class Index extends React.Component<P, S> {
+class Index extends Component<P, S> {
   componentDidMount() {
     // this.fetchList()
     // this.props.history.push('/')
