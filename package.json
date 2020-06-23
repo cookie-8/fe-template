@@ -1,7 +1,7 @@
 {
-  "name": "fe-template",
-  "version": "1.0.0",
-  "description": "",
+  "name": "{{projectName}}",
+  "version": "{{projectVersion}}",
+  "description": "{{projectDescription}}",
   "main": "./src/index.tsx",
   "license": "MIT",
   "scripts": {
@@ -19,6 +19,7 @@
     "@babel/core": "^7.7.5",
     "@babel/node": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-proposal-decorators": "^7.10.3",
     "@babel/plugin-transform-runtime": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.7.4",
