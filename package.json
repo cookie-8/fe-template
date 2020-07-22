@@ -1,7 +1,8 @@
 {
-  "name": "{{projectName}}",
-  "version": "{{projectVersion}}",
-  "description": "{{projectDescription}}",
+  "name": "{{name}}",
+  "description": "{{description}}",
+  "author": "{{author}}",
+  "version": "1.0.0",
   "main": "./src/index.tsx",
   "license": "MIT",
   "scripts": {
